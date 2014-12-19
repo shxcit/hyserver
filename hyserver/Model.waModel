@@ -7,9 +7,42 @@
 				"panelColor": "#CCC1D9",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 25,
 						"Y": 20
+					}
+				}
+			},
+			"User": {
+				"panelColor": "#E5B9B7",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 383,
+						"Y": 46
+					},
+					"pathVisible": true
+				}
+			},
+			"Pallet": {
+				"panelColor": "#eee",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 282,
+						"Y": 230
+					},
+					"pathVisible": true
+				}
+			},
+			"Pallethis": {
+				"panelColor": "#8DB3E2",
+				"panel": {
+					"isOpen": "true",
+					"position": {
+						"X": 297,
+						"Y": 59
 					},
 					"pathVisible": true
 				}
@@ -23,8 +56,158 @@
 	},
 	"dataClasses": [
 		{
-			"collectionName": "FhdataCollection",
+			"name": "Fhdata",
 			"className": "Fhdata",
+			"collectionName": "FhdataCollection",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "cklsh",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "attribute1",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "dzcode",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "dwmc",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "ypcode",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "ypname",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "ypgg",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "ypcj",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "cksl",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "ypph",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "ypbz",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "ypkc",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "shbz",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "shlx",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "yptm",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "yphw",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "ckbgy",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"path": "UserCollection.username"
+				},
+				{
+					"name": "dzjg",
+					"scope": "public",
+					"type": "bool",
+					"kind": "storage"
+				},
+				{
+					"name": "dzzh",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "ddbh",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "ywlxmc",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				},
+				{
+					"name": "ywlxbh",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				}
+			]
+		},
+		{
+			"collectionName": "UserCollection",
+			"className": "User",
 			"attributes": [
 				{
 					"name": "ID",
@@ -35,43 +218,96 @@
 					"primKey": "true"
 				},
 				{
-					"name": "cklsh",
+					"name": "userid",
 					"scope": "public",
 					"type": "string",
 					"kind": "storage"
 				},
 				{
-					"name": "attribute1",
+					"name": "username",
 					"scope": "public",
 					"type": "string",
 					"kind": "storage"
 				},
 				{
-					"name": "dzcode",
+					"name": "usertype",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
+				}
+			]
+		},
+		{
+			"collectionName": "PalletCollection",
+			"className": "Pallet",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "pallet",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "palletname",
 					"scope": "public",
 					"type": "string",
 					"kind": "storage"
 				},
 				{
-					"name": "dwmc",
+					"name": "status",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage",
+					"matchColumn": "memo"
+				}
+			]
+		},
+		{
+			"collectionName": "PallethisCollection",
+			"className": "Pallethis",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"type": "long",
+					"autosequence": "true",
+					"unique": "true",
+					"primKey": "true"
+				},
+				{
+					"name": "palletid",
+					"scope": "public",
+					"type": "long",
+					"kind": "storage"
+				},
+				{
+					"name": "ypbh",
 					"scope": "public",
 					"type": "string",
 					"kind": "storage"
 				},
 				{
-					"name": "ypcode",
+					"name": "cksl",
 					"scope": "public",
-					"type": "string",
+					"type": "long",
 					"kind": "storage"
 				},
 				{
-					"name": "ypname",
+					"name": "cklt",
 					"scope": "public",
-					"type": "string",
+					"type": "long",
 					"kind": "storage"
 				},
 				{
-					"name": "ypgg",
+					"name": "ckdate",
 					"scope": "public",
 					"type": "string",
 					"kind": "storage"
